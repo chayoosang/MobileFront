@@ -1,51 +1,106 @@
 import React from "react";
-import styled from "styled-components/native";
+import {StyleSheet, View, Text} from "react-native"
 
-const Container = styled.View`
-    flex : 1;
-    justify-content: center;
-    align-items: center;
-    `;
-const StyledText = styled.Text`
-    font-size:30px;
-    `;
+
+
+
 
 export const Home = () => {
     return (
-        <Container>
-            <StyledText>Home</StyledText>
-        </Container>
+        <View style={styles.container}>
+            <View style={styles.menu}>
+                <Text>작은 메뉴</Text>
+                <Text>어울림</Text>
+                <Text>검색</Text>
+            </View>
+            <View style={styles.main}>
+                <Text>광고</Text>
+                <Text>게시판</Text>
+            </View>
+        </View>
     );
 };
 
 export const Sales = () => {
     return (
-        <Container>
-            <StyledText>Sales</StyledText>
-        </Container>
+        <View style={styles.container}>
+            <View style={styles.menu}>
+                <Text>작은 메뉴</Text>
+                <Text>어울림</Text>
+                <Text>검색</Text>
+            </View>
+            <View style={styles.main}>
+                <Text>게시판</Text>
+            </View>
+        </View>
     );
 };
 
 export const Bulletin = () => {
     return (
-        <Container>
-            <StyledText>Bulletin</StyledText>
-        </Container>
+        <View style={styles.container}>
+            <View style={styles.menu}>
+                <Text>작은 메뉴</Text>
+                <Text>어울림</Text>
+                <Text>검색</Text>
+            </View>
+            <View style={styles.main}>
+                <Text>게시글</Text>
+            </View>
+        </View>
     );
 };
 
 export const Inform = () => {
     return (
-        <Container>
-            <StyledText>Inform</StyledText>
-        </Container>
+        <View style={styles.container}>
+            <View style={styles.menu}>
+                <Text>작은 메뉴</Text>
+                <Text>어울림</Text>
+                <Text>검색</Text>
+            </View>
+            <View style={styles.main}>
+                <Text>게시판</Text>
+            </View>
+        </View>
     );
 };
 
 export const My = () => {
     return (
-        <Container>
-            <StyledText>My</StyledText>
-        </Container>
+        <View style={styles.container}>
+            <View style={styles.menu}>
+                <Text>작은 메뉴</Text>
+                <Text>어울림</Text>
+                <Text>검색</Text>
+            </View>
+            <View style={styles.main}>
+                <Text>게시판</Text>
+            </View>
+        </View>
     );
 };
+
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        justifyContent: 'center',
+    },
+    menu: {
+        flex: 0.2,
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: "center",
+        backgroundColor: "yellow"
+    },
+    main: {
+        flex: 2,
+        justifyContent: 'space-between',
+        alignItems: "center",
+    }
+
+
+});
+
+
