@@ -1,5 +1,6 @@
 import React from "react";
 import {StyleSheet, View, Text} from "react-native"
+import SalesStackNavigation from "../navigations/SalesStack";
 
 
 
@@ -24,14 +25,15 @@ export const Home = () => {
 export const Sales = () => {
     return (
         <View style={styles.container}>
-            <View style={styles.menu}>
-                <Text>작은 메뉴</Text>
-                <Text>어울림</Text>
-                <Text>검색</Text>
-            </View>
-            <View style={styles.main}>
-                <Text>게시판</Text>
-            </View>
+            {/*<View style={styles.menu}>*/}
+            {/*    <Text>작은 메뉴</Text>*/}
+            {/*    <Text>어울림</Text>*/}
+            {/*    <Text>검색</Text>*/}
+            {/*</View>*/}
+            {/*<View style={styles.main}>*/}
+            {/*    <Text>게시판</Text>*/}
+            {/*</View>*/}
+            <SalesStackNavigation />
         </View>
     );
 };
