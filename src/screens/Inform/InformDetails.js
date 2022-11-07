@@ -1,26 +1,25 @@
 import React from "react";
-import {View, StyleSheet, Text, Image, Button, TouchableOpacity} from "react-native";
+import {View, Text, StyleSheet, Image, TouchableOpacity} from "react-native";
 
 
-const SalesDetails = ({route}) => {
+const InformDetails = ({route}) => {
     return (
         <View style={styles.container}>
+            <View style={styles.titleView}>
+                <Text style={styles.title}>
+                    {route.params.title}
+                </Text>
+            </View>
             <View style={styles.details}>
-                <Image style={styles.itemImg} source={route.params.img}/>
-                <Text style={styles.price}>{route.params.price}</Text>
-                <Text style={styles.name}>{route.params.name}</Text>
-                <View style={styles.etc}>
-                    <Text style={styles.etcText}>{route.params.location}</Text>
-                    <Text style={styles.etcText}>{route.params.time}</Text>
-                </View>
-                <Text style={styles.exp}>{route.params.exp}</Text>
+                <Image style={styles.itemImg}/>
+                <Text style={styles.exp}>{route.params.content}</Text>
             </View>
             <View style={styles.buttons}>
                 <TouchableOpacity style={styles.likeButton}>
                     <Text style={styles.likeText}>like</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.chatButton}>
-                    <Text style={styles.chatText}>Let's chat</Text>
+                    <Text style={styles.chatText}>Apply</Text>
                 </TouchableOpacity>
             </View>
         </View>
@@ -37,10 +36,18 @@ const styles = StyleSheet.create({
     details: {
         flex: 2,
     },
+    titleView: {
+        margin: 14,
+    },
+    title: {
+        fontSize: 25,
+    },
     itemImg: {
         width: "100%",
         height: 300,
         resizeMode: "contain",
+        backgroundColor: "grey",
+
     },
     price: {
         fontSize: 35,
@@ -106,4 +113,4 @@ const styles = StyleSheet.create({
 
 });
 
-export default SalesDetails;
+export default InformDetails;
