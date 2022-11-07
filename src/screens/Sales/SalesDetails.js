@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
     itemImg: {
         width: "100%",
         height: 300,
-        resizeMode: "cover",
+        resizeMode: "contain",
     },
     price: {
         fontSize: 35,

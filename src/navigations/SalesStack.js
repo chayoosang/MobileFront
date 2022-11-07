@@ -1,18 +1,20 @@
 import React from 'react'
 import {createStackNavigator} from "@react-navigation/stack";
-import SalesHome from '../screens/SalesHome';
-import SalesDetails from "../screens/SalesDetails";
+import SalesHome from '../screens/Sales/SalesHome';
+import SalesDetails from "../screens/Sales/SalesDetails";
+import InformHome from "../screens/Inform/InformHome";
 
 
-const SalesStack = createStackNavigator();
+const Stack = createStackNavigator();
 
-const SalesStackNavigation = () => {
+const StackNavigation = () => {
     return (
-        <SalesStack.Navigator>
-            <SalesStack.Screen name="SalesHome" component={SalesHome}/>
-            <SalesStack.Screen name="SalesDetails" component={SalesDetails}/>
-        </SalesStack.Navigator>
+        <Stack.Navigator>
+            <Stack.Screen name="SalesHome" component={SalesHome}/>
+            <Stack.Screen name="SalesDetails" component={SalesDetails}/>
+            <Stack.Screen name="InformHome" component={InformHome}/>
+        </Stack.Navigator>
     );
 };
 
-export default SalesStackNavigation;
+export default StackNavigation;

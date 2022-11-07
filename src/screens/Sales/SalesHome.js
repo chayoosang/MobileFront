@@ -1,33 +1,32 @@
 import React, {useState} from "react";
 import {StyleSheet, View, Text, Image, TouchableOpacity, FlatList} from "react-native";
-import img from '../../assets/icon.png'
 
 
 const items = [
     {_id: 1, item_name: "piano", item_price: "$1,200",
         item_exp: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", item_location: "canada",
         item_time: new Date().getHours(),
-        item_img: require('../../assets/icon.png')},
+        item_img: require('../../assets/image.png')},
     {_id: 2, item_name: "computer", item_price: "$700",
         item_exp: "cpu: 10700k, vga: gtx2060,, ram: 16g", item_location: "canada",
         item_time: new Date().getHours(),
-        item_img: require('../../assets/icon.png')},
+        item_img: require('../../assets/image.png')},
     {_id: 3, item_name: "piano", item_price: "$1,200",
         item_exp: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", item_location: "canada",
         item_time: new Date().getHours(),
-        item_img: require('../../assets/icon.png')},
+        item_img: require('../../assets/image.png')},
     {_id: 4, item_name: "piano", item_price: "$1,200",
         item_exp: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", item_location: "canada",
         item_time: new Date().getHours(),
-        item_img: require('../../assets/icon.png')},
+        item_img: require('../../assets/image.png')},
     {_id: 5, item_name: "piano", item_price: "$1,200",
         item_exp: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", item_location: "canada",
         item_time: new Date().getHours(),
-        item_img: require('../../assets/icon.png')},
+        item_img: require('../../assets/image.png')},
     {_id: 6, item_name: "piano", item_price: "$1,200",
         item_exp: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", item_location: "canada",
         item_time: new Date().getHours(),
-        item_img: require('../../assets/icon.png')},
+        item_img: require('../../assets/image.png')},
 
 ];
 
@@ -44,14 +43,13 @@ const SalesHome = ({navigation}) => {
     return (
         <View style={styles.menu}>
             <FlatList style={styles.itemRow}
-                      onLayout={e => setContainerWidth(e.nativeEvent.layout.width)}
                       numColumns={2}
                       data={items}
                       renderItem={({item}) =>
                           <TouchableOpacity activeOpacity={0.3} style={styles.item}
                                             key={item._id}
                                             onPress={() => _onPress(item)}>
-                              <Image style={styles.itemImg} source={img}/>
+                              <Image style={styles.itemImg} source={item.item_img}/>
                               <Text style={styles.itemPrice}>{item.item_price}</Text>
                               <Text style={styles.itemName}>{item.item_price}</Text>
                               <Text style={styles.itemExp}>{item.item_exp.slice(0, 20)}</Text>
@@ -90,6 +88,7 @@ const styles = StyleSheet.create({
         width: '100%',
         height: 200,
         borderRadius: 5,
+        resizeMode: "cover",
     },
     itemPrice: {
         fontSize: "30px",
